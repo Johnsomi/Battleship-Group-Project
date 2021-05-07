@@ -27,25 +27,39 @@ namespace Module8
             Direction d = (Direction)rand.Next(0, 1);
             Position pos = new Position(rand.Next(0, _gridSize), rand.Next(0, _gridSize));
 
-            //Random player just puts the ships in the grid in Random columns
-            //Note it cannot deal with the case where there's not enough columns
-            //for 1 per ship
 
-            var availableColumns = new List<int>();
-            for (int i = 0; i < gridSize; i++)
-            {
-                availableColumns.Add(i);
-            }
+
+
+            // currently this code leaves some of the ships without a position, its not going back to try again properly.
+
+            Ships tempShip = new Ships();
+            Ships finalShips = new Ships();
 
             foreach (var ship in ships._ships)
             {
-                //Choose an X from the set of remaining columns
-                var x = availableColumns[Random.Next(availableColumns.Count)];
-                availableColumns.Remove(x); //Make sure we can't pick it again
+                while (ship.Positions != null)// if this is true then the ship has a position
+                {
+                    d = (Direction)rand.Next(0, 1);
+                    pos = new Position(rand.Next(0, _gridSize), rand.Next(0, _gridSize));
+                    ship.Place(pos, d);
+                    
+                    tempShip.Add(ship);
+                    try
+                    {
+                        brainGrid.Add(tempShip);// throws exception for an invalid location
+                    }
+                    catch (Exception)
+                    {
+                        ship.Reset();// makes ship.Positions = null
+                        continue;
+                    }
 
-                //Choose a Y based o nthe ship length and grid size so it always fits
-                var y = Random.Next(gridSize - ship.Length);
-                ship.Place(new Position(x, y), Direction.Vertical);
+                    foreach (var att in ship.Positions)
+                    {
+                        brainGrid.Attack(att);
+                    }
+
+                }
             }
 
 
@@ -67,7 +81,7 @@ namespace Module8
         }
 
 
-
+        /*
 
         int shipCounter = 0, trend = 0;
         static Random rnd = new Random();
@@ -169,6 +183,7 @@ namespace Module8
             }
 
             return new Position(rnd.Next(10), rnd.Next(10));
-        }
+        }*/
     }
+
 }
