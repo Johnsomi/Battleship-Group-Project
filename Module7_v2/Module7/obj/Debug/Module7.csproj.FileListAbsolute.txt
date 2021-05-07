@@ -9,3 +9,6 @@ C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\obj\D
 C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\obj\Debug\Module7.csproj.CoreCompileInputs.cache
 C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\obj\Debug\Module7.exe
 C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\obj\Debug\Module7.pdb
+C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\bin\Debug\Module7.exe.config
+C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\bin\Debug\Module7.exe
+C:\Users\Greg\Documents\GitHub\Battleship-Group-Project\Module7_v2\Module7\bin\Debug\Module7.pdb
