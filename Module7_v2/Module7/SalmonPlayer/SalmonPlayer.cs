@@ -29,16 +29,26 @@ namespace Module8
 
 
 
-            try
-            {
-                
-            }
-            catch (Exception)
-            {
 
-                throw;
+            //Random player just puts the ships in the grid in Random columns
+            //Note it cannot deal with the case where there's not enough columns
+            //for 1 per ship
+            var availableColumns = new List<int>();
+            for (int i = 0; i < gridSize; i++)
+            {
+                availableColumns.Add(i);
             }
 
+            foreach (var ship in ships._ships)
+            {
+                //Choose an X from the set of remaining columns
+                var x = availableColumns[Random.Next(availableColumns.Count)];
+                availableColumns.Remove(x); //Make sure we can't pick it again
+
+                //Choose a Y based o nthe ship length and grid size so it always fits
+                var y = Random.Next(gridSize - ship.Length);
+                ship.Place(new Position(x, y), Direction.Vertical);
+            }
 
 
 
