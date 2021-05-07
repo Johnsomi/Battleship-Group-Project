@@ -27,12 +27,10 @@ namespace Module8
             Direction d = (Direction)rand.Next(0, 1);
             Position pos = new Position(rand.Next(0, _gridSize), rand.Next(0, _gridSize));
 
-
-
-
             //Random player just puts the ships in the grid in Random columns
             //Note it cannot deal with the case where there's not enough columns
             //for 1 per ship
+
             var availableColumns = new List<int>();
             for (int i = 0; i < gridSize; i++)
             {
