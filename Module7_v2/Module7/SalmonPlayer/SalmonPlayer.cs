@@ -53,10 +53,13 @@ namespace Module8
                             {
                                 throw new ArgumentException("One of the ships is outside the grid");
                             }
-
-                            if (brainGrid._grid[spot.X, spot.Y] == BrainGrid.Thought.Me)
+                            else if (brainGrid._grid[spot.X, spot.Y] == BrainGrid.Thought.Me)
                             {
                                 throw new ArgumentException("One of the players has an overlapping ship");
+                            }
+                            else
+                            {
+
                             }
 
                         }
