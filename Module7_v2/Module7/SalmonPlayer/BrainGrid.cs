@@ -10,13 +10,13 @@ namespace Module8
     {
         public enum Thought
         {
+            Empty,
             Hit,
             Miss,
-            Battleship,
-
+            Me
         }
         public Thought[,] _grid;
-        public int _gridsize;
+        public int _gridSize;
         public BrainGrid(int gridSize)
         {
 
@@ -27,7 +27,7 @@ namespace Module8
             {
                 for (int y = 0; y < gridSize; y++)
                 {
-                    _grid[x, y] = new GridEntry();
+                    _grid[x, y] = Thought.Empty;
                 }
             }
         }

@@ -49,6 +49,7 @@
     <Compile Include="IPlayer.cs" />
     <Compile Include="MultiPlayerBattleShip.cs" />
     <Compile Include="PlayMode.cs" />
+    <Compile Include="SalmonPlayer\BrainGrid.cs" />
     <Compile Include="SalmonPlayer\SalmonPlayer.cs" />
     <Compile Include="Ships\AircraftCarrier.cs" />
     <Compile Include="Ships\AttackResult.cs" />
