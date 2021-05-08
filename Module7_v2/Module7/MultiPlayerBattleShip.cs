@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     internal class MultiPlayerBattleShip
     {

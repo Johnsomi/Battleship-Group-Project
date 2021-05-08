@@ -1,4 +1,4 @@
-﻿namespace Module8
+﻿namespace CS3110_Module_8_Group
 {
     public class Position
     {

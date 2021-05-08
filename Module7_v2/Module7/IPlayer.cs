@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     interface IPlayer
     {

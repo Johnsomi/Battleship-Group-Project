@@ -3,7 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     internal class DumbPlayer : IPlayer
     {

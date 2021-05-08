@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
-    class BrainGrid
+    class BrainGrid // this class tracks the shots
     {
         public enum Thought
         {
             Empty,
             Hit,
             Miss,
-            Me
+            Me,
+            Sank
         }
         public Thought[,] _grid;
         public int _gridSize;

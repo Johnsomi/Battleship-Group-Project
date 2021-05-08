@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     public class Grid
     {

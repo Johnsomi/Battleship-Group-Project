@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 { 
     class AircraftCarrier : Ship
     {

@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     class Program
     {
         static void Main(string[] args)
         {
             List<IPlayer> players = new List<IPlayer>();
-            players.Add(new DumbPlayer("Dumb 1"));
-            players.Add(new SalmonPlayer("Salmon 2"));
+            players.Add(new SalmonPlayer("Team Salmon"));
+            players.Add(new RandomPlayer("Random 1"));
+            players.Add(new RandomPlayer("Random 2"));
 
             //Your code here
             //players.Add(new GroupNPlayer());

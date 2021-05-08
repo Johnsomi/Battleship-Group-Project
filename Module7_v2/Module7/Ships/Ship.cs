@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Module8
+namespace CS3110_Module_8_Group
 {
     public abstract class Ship
     {
