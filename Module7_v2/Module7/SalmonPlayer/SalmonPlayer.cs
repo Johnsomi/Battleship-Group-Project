@@ -8,8 +8,7 @@ namespace Module8
         private int _index;
         private static readonly Random Random = new Random();
         private int _gridSize;
-        private Grid brainGrid;
-        private Grid ourGrid;
+        private BrainGrid brainGrid;
 
         public SalmonPlayer(string name)
         {
@@ -22,7 +21,7 @@ namespace Module8
             _gridSize = gridSize;
             _index = playerIndex;
 
-            brainGrid = new Grid(gridSize);
+            brainGrid = new BrainGrid(gridSize);
 
             Direction d = (Direction)rand.Next(0, 1);
             Position pos = new Position(rand.Next(0, _gridSize), rand.Next(0, _gridSize));
@@ -32,7 +31,7 @@ namespace Module8
 
             // currently this code leaves some of the ships without a position, its not going back to try again properly.
 
-            Ships tempShip = new Ships();
+            Ships tempShips = new Ships();
             Ships finalShips = new Ships();
 
             foreach (var ship in ships._ships)
@@ -42,21 +41,30 @@ namespace Module8
                     d = (Direction)rand.Next(0, 1);
                     pos = new Position(rand.Next(0, _gridSize), rand.Next(0, _gridSize));
                     ship.Place(pos, d);
-                    
-                    tempShip.Add(ship);
+
+
+
+                    tempShips.Add(ship);
                     try
                     {
-                        brainGrid.Add(tempShip);// throws exception for an invalid location
+                        foreach (var spot in ship.Positions)
+                        {
+                            if (spot.X < 0 || spot.X > _gridSize || spot.Y < 0 || spot.Y >= _gridSize)
+                            {
+                                throw new ArgumentException("One of the ships is outside the grid");
+                            }
+
+                            if (brainGrid._grid[spot.X, spot.Y] == BrainGrid.Thought.Me)
+                            {
+                                throw new ArgumentException("One of the players has an overlapping ship");
+                            }
+
+                        }
                     }
                     catch (Exception)
                     {
                         ship.Reset();// makes ship.Positions = null
                         continue;
-                    }
-
-                    foreach (var att in ship.Positions)
-                    {
-                        brainGrid.Attack(att);
                     }
 
                 }
